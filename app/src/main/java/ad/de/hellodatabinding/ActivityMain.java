@@ -1,5 +1,8 @@
 package ad.de.hellodatabinding;
 
+import ad.de.hellodatabinding.databinding.ActivityMainBinding;
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,9 +10,21 @@ import android.view.MenuItem;
 
 public class ActivityMain extends AppCompatActivity {
 
+  private ActivityMainBinding binding;
+  private ViewModelMain model;
+
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+  }
+
+  @Override protected void onResume() {
+    super.onResume();
+
+    model = new ViewModelMain("World");
+
+    binding.setModel(model);
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {
