@@ -2,11 +2,13 @@ package ad.de.hellodatabinding;
 
 import ad.de.hellodatabinding.databinding.ActivityMainBinding;
 import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -17,6 +19,8 @@ public class ActivityMain extends AppCompatActivity {
     super.onCreate(savedInstanceState);
 
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+    ((EditText) findViewById(R.id.editText)).addTextChangedListener(new MyTextWatcher());
   }
 
   @Override protected void onResume() {
@@ -45,5 +49,19 @@ public class ActivityMain extends AppCompatActivity {
     }
 
     return super.onOptionsItemSelected(item);
+  }
+
+  private class MyTextWatcher implements TextWatcher {
+    @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+      model.name.set(s.toString());
+    }
+
+    @Override public void afterTextChanged(Editable s) {
+
+    }
   }
 }
