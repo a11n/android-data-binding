@@ -1,8 +1,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
   <data>
     <variable
-        name="model"
-        type="ad.de.hellodatabinding.ViewModelMain"
+        name="name"
+        type="String"
         />
   </data>
   <LinearLayout
@@ -18,7 +18,7 @@
       >
 
     <TextView
-        android:text="@{@string/hello_world(model.name)}"
+        android:text="@{@string/hello_world(name)}"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
