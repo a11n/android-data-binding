@@ -20,7 +20,7 @@ public class ActivityMain extends AppCompatActivity {
 
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-    ((EditText) findViewById(R.id.editText)).addTextChangedListener(new MyTextWatcher());
+    binding.editText.addTextChangedListener(new MyTextWatcher());
   }
 
   @Override protected void onResume() {
