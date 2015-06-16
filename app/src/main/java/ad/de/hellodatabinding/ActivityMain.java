@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.CompoundButton;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -16,6 +17,7 @@ public class ActivityMain extends AppCompatActivity {
 
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
     binding.setWatcher(new MyTextWatcher());
+    binding.setListener(new MyOnCheckedChangeListener());
   }
 
   @Override protected void onResume() {
@@ -36,6 +38,12 @@ public class ActivityMain extends AppCompatActivity {
 
     @Override public void afterTextChanged(Editable s) {
 
+    }
+  }
+
+  private class MyOnCheckedChangeListener implements CompoundButton.OnCheckedChangeListener {
+    @Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+      binding.setHideSection(isChecked);
     }
   }
 }

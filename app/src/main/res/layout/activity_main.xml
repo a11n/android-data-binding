@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
   <data>
+    <import type="android.view.View"/>
     <variable
         name="name"
         type="String"
@@ -10,6 +11,14 @@
     <variable
         name="watcher"
         type="android.text.TextWatcher"
+        />
+    <variable
+        name="hideSection"
+        type="boolean"
+        />
+    <variable
+        name="listener"
+        type="android.widget.CompoundButton.OnCheckedChangeListener"
         />
   </data>
   <LinearLayout
@@ -32,6 +41,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:watcher="@{watcher}"
+        />
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hide_section"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:listener="@{listener}"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/long_string"
+        android:visibility="@{hideSection ? View.GONE : View.VISIBLE}"
         />
 
   </LinearLayout>
