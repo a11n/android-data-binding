@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.EditText;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -18,8 +15,7 @@ public class ActivityMain extends AppCompatActivity {
     super.onCreate(savedInstanceState);
 
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
-    binding.editText.addTextChangedListener(new MyTextWatcher());
+    binding.setWatcher(new MyTextWatcher());
   }
 
   @Override protected void onResume() {
@@ -29,6 +25,7 @@ public class ActivityMain extends AppCompatActivity {
   }
 
   private class MyTextWatcher implements TextWatcher {
+
     @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
     }

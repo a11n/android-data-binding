@@ -1,12 +1,18 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
   <data>
     <variable
         name="name"
         type="String"
         />
+    <variable
+        name="watcher"
+        type="android.text.TextWatcher"
+        />
   </data>
   <LinearLayout
-      xmlns:tools="http://schemas.android.com/tools"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -25,7 +31,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        app:watcher="@{watcher}"
         />
 
   </LinearLayout>
