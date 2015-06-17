@@ -17,8 +17,16 @@
         type="boolean"
         />
     <variable
-        name="listener"
+        name="checkedChangeListener"
         type="android.widget.CompoundButton.OnCheckedChangeListener"
+        />
+    <variable
+        name="adapter"
+        type="android.widget.ListAdapter"
+        />
+    <variable
+        name="itemClickListener"
+        type="android.widget.AdapterView.OnItemClickListener"
         />
   </data>
   <LinearLayout
@@ -48,13 +56,20 @@
         android:layout_height="wrap_content"
         android:text="@string/hide_section"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        app:listener="@{listener}"
+        app:listener="@{checkedChangeListener}"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/long_string"
         android:visibility="@{hideSection ? View.GONE : View.VISIBLE}"
+        />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:adapter="@{adapter}"
+        app:listener="@{itemClickListener}"
         />
 
   </LinearLayout>
