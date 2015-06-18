@@ -4,6 +4,10 @@
     >
   <data>
     <import type="android.view.View"/>
+    <import type="java.util.List"/>
+    <import type="ad.de.hellodatabinding.AdapterBuilder"/>
+    <import type="ad.de.hellodatabinding.Variables"/>
+    <import type="ad.de.hellodatabinding.R"/>
     <variable
         name="name"
         type="String"
@@ -21,8 +25,8 @@
         type="android.widget.CompoundButton.OnCheckedChangeListener"
         />
     <variable
-        name="adapter"
-        type="android.widget.ListAdapter"
+        name="items"
+        type="List&lt;String>"
         />
     <variable
         name="itemClickListener"
@@ -69,7 +73,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        app:adapter="@{adapter}"
+        app:adapter="@{AdapterBuilder.adapt(items).on(Variables.text).with(R.layout.list_item)}"
         app:listener="@{itemClickListener}"
         tools:listitem="@layout/list_item"
         />

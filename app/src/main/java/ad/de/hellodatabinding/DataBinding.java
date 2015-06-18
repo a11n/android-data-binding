@@ -7,25 +7,25 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-public class BindingAdapter {
+public class DataBinding {
   @android.databinding.BindingAdapter("watcher")
   public static void addTextChangedListener(EditText view, TextWatcher watcher) {
     view.addTextChangedListener(watcher);
   }
 
   @android.databinding.BindingAdapter("listener")
-  public static void addTextChangedListener(CompoundButton view,
+  public static void setTextChangedListener(CompoundButton view,
       CompoundButton.OnCheckedChangeListener listener) {
     view.setOnCheckedChangeListener(listener);
   }
 
   @android.databinding.BindingAdapter("adapter")
-  public static void addOnItemClickListener(ListView view, ListAdapter adapter) {
+  public static void setAdapter(ListView view, ListAdapter adapter) {
     view.setAdapter(adapter);
   }
 
   @android.databinding.BindingAdapter("listener")
-  public static void addOnItemClickListener(ListView view,
+  public static void setOnItemClickListener(ListView view,
       AdapterView.OnItemClickListener listener) {
     view.setOnItemClickListener(listener);
   }
