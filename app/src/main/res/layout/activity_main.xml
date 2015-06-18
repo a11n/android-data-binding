@@ -13,10 +13,6 @@
         type="String"
         />
     <variable
-        name="watcher"
-        type="android.text.TextWatcher"
-        />
-    <variable
         name="hideSection"
         type="boolean"
         />
@@ -52,7 +48,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:watcher="@{watcher}"
+        app:bind="@{Variables.name}"
         />
 
     <Switch
