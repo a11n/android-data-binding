@@ -17,10 +17,6 @@
         type="boolean"
         />
     <variable
-        name="checkedChangeListener"
-        type="android.widget.CompoundButton.OnCheckedChangeListener"
-        />
-    <variable
         name="items"
         type="List&lt;String>"
         />
@@ -56,7 +52,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hide_section"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        app:listener="@{checkedChangeListener}"
+        app:bind="@{Variables.hideSection}"
         />
     <TextView
         android:layout_width="match_parent"

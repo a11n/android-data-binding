@@ -31,10 +31,16 @@ public class DataBinding {
     });
   }
 
-  @android.databinding.BindingAdapter("listener")
-  public static void setTextChangedListener(CompoundButton view,
-      CompoundButton.OnCheckedChangeListener listener) {
-    view.setOnCheckedChangeListener(listener);
+  @android.databinding.BindingAdapter("bind")
+  public static void setTextChangedListener(CompoundButton view, final int variable) {
+    final ViewDataBinding binding = DataBindingUtil.findBinding(view);
+
+    view.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+      @Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        binding.setVariable(variable, isChecked);
+        binding.executePendingBindings();
+      }
+    });
   }
 
   @android.databinding.BindingAdapter("adapter")

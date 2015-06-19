@@ -8,5 +8,6 @@ package ad.de.hellodatabinding;
  */
 public class Variables {
   public final static int name = ad.de.hellodatabinding.BR.name;
+  public final static int hideSection = ad.de.hellodatabinding.BR.hideSection;
   public final static int text = ad.de.hellodatabinding.BR.text;
 }
