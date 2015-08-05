@@ -1,4 +1,4 @@
-package de.ad.databinding.util;
+package ad.de.hellodatabinding;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
